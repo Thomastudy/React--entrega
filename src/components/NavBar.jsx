@@ -7,7 +7,7 @@ import { CartWidget } from "./CartWidget";
 export const NavBar = () => {
   return (
     <>
-      <Navbar bg="light" data-bs-theme="light">
+      <Navbar bg="secondary" data-bs-theme="light">
         <Container>
           <Navbar.Brand href="#home">Hali Tienda</Navbar.Brand>
           <Nav className="me-auto">
@@ -15,7 +15,7 @@ export const NavBar = () => {
             <Nav.Link href="#Nosotros">Nosotros</Nav.Link>
             <Nav.Link href="#contacto">contacto</Nav.Link>
           </Nav>
-            <CartWidget />
+          <CartWidget />
         </Container>
       </Navbar>
     </>
