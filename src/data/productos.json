@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "img": "src/assets/productos/arosamordorado.jpeg",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/arosamordorado.jpeg",
     "title": "Aros Amor - Dorado",
     "code": "ArosAmor",
     "price": "280",
@@ -9,15 +9,15 @@
   },
   {
     "id": 2,
-    "img": "src/assets/productos/arosAmor.jpg",
-    "title": "Aros Amor",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/arosamor.jpg",
+    "title": "Aros Amor - Plateado",
     "code": "ArosAmor",
     "price": "280",
     "category": "Aritos"
   },
   {
     "id": 3,
-    "img": "src/assets/productos/arosCronos.jpeg",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/aroscronos.jpeg",
     "title": "Aros Cronos",
     "code": "ArosCronos",
     "price": "300",
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "img": "src/assets/productos/arosSiena.jpeg",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/arossiena.jpeg",
     "title": "Aros Siena",
     "code": "ArosSiena",
     "price": "290",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "img": "src/assets/productos/arosojoturco.jpeg",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/arosojoturco.jpeg",
     "title": "Aros Ojo Turco",
     "code": "ArosOjoTurco",
     "price": "300",
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "img": "src/assets/productos/EarCuffsMoon.jpeg",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/earcuffsmoon.jpeg",
     "title": "Ear Cuffs Moon",
     "code": "EarCuffsMoon",
     "price": "280",
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "img": "src/assets/productos/EarCuffPositano.jpeg",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/earcuffpositano.jpeg",
     "title": "Ear Cuff Positano",
     "code": "EarCuffPositano",
     "price": "200",
@@ -57,7 +57,7 @@
   },
   {
     "id": 8,
-    "img": "src/assets/productos/cadenaCorallo.jpeg",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/cadenacorallo.jpeg",
     "title": "Cadena Corallo",
     "code": "CadenaCorallo",
     "price": "250",
@@ -65,7 +65,7 @@
   },
   {
     "id": 9,
-    "img": "src/assets/productos/cadenaIris.jpeg",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/cadenairis.jpeg",
     "title": "Cadena Iris",
     "code": "CadenaIris",
     "price": "250",
@@ -73,7 +73,7 @@
   },
   {
     "id": 10,
-    "img": "src/assets/productos/pulseraAtenea.jpeg",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/pulseraatenea.jpeg",
     "title": "Pulsera Atenea  - acero dorado",
     "code": "PulseraAtenea",
     "price": "200",
@@ -81,7 +81,7 @@
   },
   {
     "id": 11,
-    "img": "src/assets/productos/pulseraRome.jpeg",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/pulserarome.jpeg",
     "title": "Pulsera Rome",
     "code": "PulseraRome",
     "price": "150",
@@ -89,8 +89,8 @@
   },
   {
     "id": 12,
-    "img": "./src/assets/productos/pulseraarcher.jpeg",
-    "title": "PulseraArcher - acero dorado / plateado",
+    "img": "https://d36ojrfcsde8qb.cloudfront.net/pulseraarcher.jpeg",
+    "title": "Pulsera Archer - acero dorado / plateado",
     "code": "PulseraArcher",
     "price": "300",
     "category": "Pulseras"

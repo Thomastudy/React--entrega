@@ -37,11 +37,21 @@ export const ItemListContainer = (props) => {
           <Card key={i.id} style={{ width: "18rem" }}>
             <Card.Img variant="top" src={i.img} />
             <Card.Body>
-              <Card.Title>{i.title}</Card.Title>
+              <Card.Title>
+                <h2>{i.title}</h2>
+              </Card.Title>
+              <Card.Text>
+               $ {i.price}
+              </Card.Text>
               <Card.Text>{i.category}</Card.Text>
-              <Link to={`/item/${i.id}`}>
-                <Button variant="primary">Comprar</Button>
-              </Link>
+              <div>
+                <Link to={`/item/${i.id}`}>
+                  <Button variant="primary">Ver producto</Button>
+                </Link>
+                <Link to={`/item/`}>
+                  <Button variant="secondary">+</Button>
+                </Link>
+              </div>
             </Card.Body>
           </Card>
         ))}
