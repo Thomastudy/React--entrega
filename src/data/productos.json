@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "img": "src/assets/productos/arosamordorado.jpeg",
+    "title": "Aros Amor - Dorado",
+    "code": "ArosAmor",
+    "price": "280",
+    "category": "aritos"
+  },
+  {
+    "id": 2,
+    "img": "src/assets/productos/arosAmor.jpg",
+    "title": "Aros Amor",
+    "code": "ArosAmor",
+    "price": "280",
+    "category": "Aritos"
+  },
+  {
+    "id": 3,
+    "img": "src/assets/productos/arosCronos.jpeg",
+    "title": "Aros Cronos",
+    "code": "ArosCronos",
+    "price": "300",
+    "category": "Aritos"
+  },
+  {
+    "id": 4,
+    "img": "src/assets/productos/arosSiena.jpeg",
+    "title": "Aros Siena",
+    "code": "ArosSiena",
+    "price": "290",
+    "category": "Aritos"
+  },
+  {
+    "id": 5,
+    "img": "src/assets/productos/arosojoturco.jpeg",
+    "title": "Aros Ojo Turco",
+    "code": "ArosOjoTurco",
+    "price": "300",
+    "category": "Aritos"
+  },
+  {
+    "id": 6,
+    "img": "src/assets/productos/EarCuffsMoon.jpeg",
+    "title": "Ear Cuffs Moon",
+    "code": "EarCuffsMoon",
+    "price": "280",
+    "category": "Aritos"
+  },
+  {
+    "id": 7,
+    "img": "src/assets/productos/EarCuffPositano.jpeg",
+    "title": "Ear Cuff Positano",
+    "code": "EarCuffPositano",
+    "price": "200",
+    "category": "Aritos"
+  },
+  {
+    "id": 8,
+    "img": "src/assets/productos/cadenaCorallo.jpeg",
+    "title": "Cadena Corallo",
+    "code": "CadenaCorallo",
+    "price": "250",
+    "category": "Collares"
+  },
+  {
+    "id": 9,
+    "img": "src/assets/productos/cadenaIris.jpeg",
+    "title": "Cadena Iris",
+    "code": "CadenaIris",
+    "price": "250",
+    "category": "Collares"
+  },
+  {
+    "id": 10,
+    "img": "src/assets/productos/pulseraAtenea.jpeg",
+    "title": "Pulsera Atenea  - acero dorado",
+    "code": "PulseraAtenea",
+    "price": "200",
+    "category": "Pulseras"
+  },
+  {
+    "id": 11,
+    "img": "src/assets/productos/pulseraRome.jpeg",
+    "title": "Pulsera Rome",
+    "code": "PulseraRome",
+    "price": "150",
+    "category": "Pulseras"
+  },
+  {
+    "id": 12,
+    "img": "./src/assets/productos/pulseraarcher.jpeg",
+    "title": "PulseraArcher - acero dorado / plateado",
+    "code": "PulseraArcher",
+    "price": "300",
+    "category": "Pulseras"
+  }
+]
