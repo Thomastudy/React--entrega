@@ -1,25 +1,33 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ItemListContainer } from "./components/ItemListContainer";
+// // importacion para firebase
+// import { getDoc, getFirestore, collection } from "firebase/firestore";
+
 import { NavBar } from "./components/NavBar";
-import { CargarProductos } from "./components/productos";
+import { ItemListContainer } from "./components/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
+
+import { Provider } from "./contexts/ItemContext";
+import { Cart } from "./components/Cart";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
+      <Provider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
 
-          <Route path="/category/:id" element={<ItemListContainer />} />
+            <Route path="/cart" element={<Cart />} />
 
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/category/:id" element={<ItemListContainer />} />
 
-          <Route path="*" element={"404"} />
-        </Routes>
-        <CargarProductos />
-      </BrowserRouter>
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+
+            <Route path="*" element={"404"} />
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </>
   );
 }

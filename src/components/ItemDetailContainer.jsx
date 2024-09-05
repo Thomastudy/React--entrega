@@ -1,8 +1,12 @@
 import Container from "react-bootstrap/Container";
 
-import data from "../data/productos.json";
+import { doc, getFirestore, getDocs, getDoc } from "firebase/firestore";
+
+// import data from "../data/productos.json";
+import { ItemCount } from "./itemCount.jsx";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ItemContext } from "../contexts/ItemContext.jsx";
 
 export const ItemDetailContainer = (props) => {
   const [product, setProduct] = useState([]);
@@ -10,14 +14,31 @@ export const ItemDetailContainer = (props) => {
 
   const { id } = useParams();
 
+  // additem context
+  const { addItem } = useContext(ItemContext);
+
   useEffect(() => {
-    new Promise((resolve) => setTimeout(() => resolve(data), 2000))
-      .then((response) => {
-        const finded = response.find((i) => i.id === Number(id));
-        setProduct(finded);
+    const db = getFirestore();
+
+    const refDoc = doc(db, "prodcuts", id);
+
+    getDoc(refDoc)
+      .then((snapshot) => {
+        setProduct({ ...snapshot.data(), id: snapshot.id });
       })
       .finally(() => setLoading(false));
   }, [id]);
+
+  // useEffect(() => {
+  //   new Promise((resolve) => setTimeout(() => resolve(data), 2000))
+  //     .then((response) => {
+  //       const finded = response.find((i) => i.id === Number(id));
+  //       setProduct(finded);
+  //     })
+  //     .finally(() => setLoading(false));
+  // }, [id]);
+
+  const onAdd = (quantity) => addItem({ ...product, quantity });
 
   if (loading) return "wait";
 
@@ -33,6 +54,9 @@ export const ItemDetailContainer = (props) => {
         />
         <br />
         <h2>${product.price}</h2>
+        <p>Stock: {product.stock}</p>
+
+        <ItemCount stock={product.stock} onAdd={onAdd} />
       </Container>
     </>
   );
