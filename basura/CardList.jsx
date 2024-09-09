@@ -1,6 +1,6 @@
 import Container from "react-bootstrap/Container";
 
-import MyCard from "./card"
+import MyCard from "../src/components/card"
 
 export const CardList = ({products}) => (
     <Container>

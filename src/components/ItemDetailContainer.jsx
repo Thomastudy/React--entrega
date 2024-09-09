@@ -1,5 +1,3 @@
-import Container from "react-bootstrap/Container";
-
 import { doc, getFirestore, getDocs, getDoc } from "firebase/firestore";
 
 // import data from "../data/productos.json";
@@ -44,20 +42,23 @@ export const ItemDetailContainer = (props) => {
 
   return (
     <>
-      <Container className="mt-4">
-        <h1>{product.title}</h1>
-        <h3>{product.category}</h3>
-        <img
-          src={`${product.img}`}
-          alt={`=> foto de  ${product.title}`}
-          height={200}
-        />
-        <br />
-        <h2>${product.price}</h2>
-        <p>Stock: {product.stock}</p>
+      <div className="prod-detail ">
+        <div className="prod-detail--img">
+          <img
+            src={`${product.img}`}
+            alt={`=> foto de  ${product.title}`}
+            height={200}
+          />
+        </div>
+        <div className="prod-detail--info">
+          <h1>{product.title}</h1>
+          <p>{product.description}</p>
+          <h2>${product.price}</h2>
+          <p>Stock: {product.stock}</p>
 
-        <ItemCount stock={product.stock} onAdd={onAdd} />
-      </Container>
+          <ItemCount stock={product.stock} onAdd={onAdd} />
+        </div>
+      </div>
     </>
   );
 };

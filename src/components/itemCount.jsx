@@ -20,12 +20,12 @@ export const ItemCount = ({ stock, onAdd }) => {
 
   return (
     <>
-      <div>
-        <button onClick={handleIncrease}>+</button>
-        <span>{count}</span>
+      <div className="item--count">
         <button onClick={handleDecrease}>-</button>
+        <span>{count}</span>
+        <button onClick={handleIncrease}>+</button> <br />
+        <button className="button--add" onClick={handleAdd}>Comprar</button>
       </div>
-      <button onClick={handleAdd}>Comprar</button>
     </>
   );
 };

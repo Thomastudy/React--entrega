@@ -2,21 +2,20 @@ import { useContext } from "react";
 import { ItemContext } from "../contexts/ItemContext";
 import { Link } from "react-router-dom";
 
-import Cart from "../assets/cart.png";
+import Cart from "../assets/shopbag.svg";
 
 export const CartWidget = () => {
   const { items } = useContext(ItemContext);
 
-  const quantity = items.reduce(
-    (acc, i) => acc + i.quantity, 
-    0
-  );
+  const quantity = items.reduce((acc, i) => acc + i.quantity, 0);
 
   return (
     <>
       <Link to={"/cart"}>
-        <img src={Cart} alt="" height={24} />
-        <span>{quantity}</span>
+        <div class="imgCarro" id="imgCarro">
+          <img src={Cart} class="pointer carrito" alt="carrito" />
+          <span className="pContador">{quantity}</span>
+        </div>
       </Link>
     </>
   );

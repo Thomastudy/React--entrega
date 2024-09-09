@@ -1,5 +1,5 @@
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+// import Button from "react-bootstrap/Button";
+// import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 
 import {
@@ -20,8 +20,8 @@ export const ItemListContainer = (props) => {
 
   const { id } = useParams();
 
-  // additem context
-  const { addItem } = useContext(ItemContext);
+  // // additem context
+  // const { addItem } = useContext(ItemContext);
 
   useEffect(() => {
     const db = getFirestore();
@@ -63,7 +63,7 @@ export const ItemListContainer = (props) => {
 
   return (
     <>
-      <Container className="mt-4">
+      {/* <Container className="mt-4">
         {products.map((i) => (
           <Card key={i.id} style={{ width: "18rem" }}>
             <Card.Img variant="top" src={i.img} />
@@ -79,12 +79,40 @@ export const ItemListContainer = (props) => {
                 </Link>
                 {/* <Button variant="secondary" onClick={() => addItem(i)}>
                   +
-                </Button> */}
+                </Button> 
               </div>
             </Card.Body>
           </Card>
         ))}
-      </Container>
+      </Container> */}
+      <main class="mainContenedor">
+        <div class="contenedor">
+          {products.map((i) => (
+            <div class="producto">
+              <div class="div--producto__imagen">
+                <img
+                  class="producto__imagen"
+                  src={i.img}
+                  alt="imagen ${i.title}"
+                />
+              </div>
+              <div class="producto__informacion">
+                <p class="producto__nombre">{i.title}</p>
+                <p class="producto__precio-r">
+                  <b>${i.price}</b>
+                </p>
+                <Link to={`/item/${i.id}`}>
+                  <button
+                    class="button pointer"
+                    title="Pulsa para comprar"
+                  >Ver producto <i class="fa-regular fa-heart pointer"></i> 
+                  </button>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </main>
     </>
   );
 };

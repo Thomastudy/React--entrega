@@ -52,25 +52,38 @@ export const Cart = () => {
 
   return (
     <>
-      <button onClick={reset}>Vaciar</button>
-      {items.map((product) => {
-        return (
-          <div key={product.id}>
-            <h1>{product.title}</h1>
-            <img
-              src={`${product.img}`}
-              alt={`=> foto de  ${product.title}`}
-              height={200}
-            />
-            <br />
-            <h2>${product.price}</h2>
-            <p>Cantidad: {product.quantity}</p>
-            <button onClick={() => removeItem(product.id)}>eliminar</button>
-          </div>
-        );
-      })}
-      <div>Total: ${total}</div>
-      <form action="">
+      <div className="contenedorCheckOut">
+        <button className="button" onClick={reset}>
+          Vaciar carrito
+        </button>
+        {items.map((product) => {
+          return (
+            <div key={product.id} className="listado">
+              <img
+                className="producto__imagen"
+                src={`${product.img}`}
+                alt={`=> foto de  ${product.title}`}
+                height={200}
+              />
+              <div className="checkout--listado--info">
+                <h3>{product.title}</h3>
+                <h3>${product.price}</h3>
+                <p>Cantidad: {product.quantity}</p>
+              </div>
+              <button
+                className="boton-eliminar"
+                onClick={() => removeItem(product.id)}
+              >
+                ⛔️
+              </button>
+            </div>
+          );
+        })}
+      </div>
+      <div className="total--compra">
+        <p>Total: ${total}</p>
+      </div>
+      <form action="" className="form--compra">
         <div>
           <label>Nombre:</label>
           <input
@@ -98,7 +111,7 @@ export const Cart = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="button" onClick={sendOrder}>
+        <button type="button" className="button" onClick={sendOrder}>
           Comprar
         </button>
       </form>

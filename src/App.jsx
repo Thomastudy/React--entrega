@@ -2,7 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // // importacion para firebase
 // import { getDoc, getFirestore, collection } from "firebase/firestore";
 
-import { NavBar } from "./components/NavBar";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import { ItemListContainer } from "./components/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
 
@@ -14,7 +15,8 @@ function App() {
     <>
       <Provider>
         <BrowserRouter>
-          <NavBar />
+        
+          <Header />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
 
@@ -26,6 +28,8 @@ function App() {
 
             <Route path="*" element={"404"} />
           </Routes>
+
+          <Footer />
         </BrowserRouter>
       </Provider>
     </>
