@@ -20,8 +20,8 @@ export const ItemListContainer = (props) => {
 
   const { id } = useParams();
 
-  // // additem context
-  // const { addItem } = useContext(ItemContext);
+  // additem context
+  const { addItem } = useContext(ItemContext);
 
   useEffect(() => {
     const db = getFirestore();
@@ -48,21 +48,6 @@ export const ItemListContainer = (props) => {
       .finally(() => setLoading(false));
   }, [id]);
 
-  // useEffect(() => {
-  //   new Promise((res, rej) => setTimeout(res(data), 2000))
-
-  //     .then((response) => {
-  //       if (!id) {
-  //         setProducts(response);
-  //       } else {
-  //         const filtered = response.filter(
-  //           (i) => i.category.toLowerCase() === id
-  //         );
-  //         setProducts(filtered);
-  //       }
-  //     })
-  //     .finally(() => setLoading(false));
-  // }, [id]);
 
   if (loading)
     return (

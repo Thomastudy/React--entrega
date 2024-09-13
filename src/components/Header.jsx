@@ -5,11 +5,11 @@ import logo from "../assets/logo.jpg";
 export const Header = () => {
   return (
     <>
-      <header class="header">
-        <a href="/" class="a_header__logo">
-          <img class="header__logo" src={logo} alt="Logotipo" />
+      <header className="header">
+        <a href="/" className="a_header__logo">
+          <img className="header__logo" src={logo} alt="Logotipo" />
         </a>
-        <div class="imgCarro" id="imgCarro">
+        <div className="imgCarro" id="imgCarro">
           <CartWidget />
         </div>
       </header>

@@ -11,12 +11,18 @@ export const CartWidget = () => {
 
   return (
     <>
-      <Link to={"/cart"}>
-        <div class="imgCarro" id="imgCarro">
-          <img src={Cart} class="pointer carrito" alt="carrito" />
-          <span className="pContador">{quantity}</span>
+      {quantity > 0 ? (
+        <Link to={"/cart"}>
+          <div className="imgCarro" id="imgCarro">
+            <img src={Cart} className="pointer carrito" alt="carrito" />
+            <span className="pContador">{quantity}</span>
+          </div>
+        </Link>
+      ) : (
+        <div className="imgCarro" id="imgCarro">
+          <img src={Cart} className="pointer carrito" alt="carrito" />
         </div>
-      </Link>
+      )}
     </>
   );
 };

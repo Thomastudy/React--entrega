@@ -4,6 +4,7 @@
   --principal: #7ab8bf;
   --secundario: #025159;
   --secundarioOscuro: #1c6069;
+  --backgroud: #eefdff;
   --divs: #a68c58;
   --dorado: #a68758;
   --doradoOscuro: #705730;
@@ -26,7 +27,7 @@ html {
 
 /** Globales **/
 body {
-  background-color: #eefdff;
+  background-color: var(--backgroud);
   font-size: 1.6rem;
   line-height: 1.5;
 }
@@ -519,7 +520,65 @@ h3 {
 }
 
 .form--compra {
-  width: 50rem;
+  width: 30rem;
   margin: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form--div {
+  background-color: var(--blanco);
+  padding: 3rem 0;
+  border: 0.3rem solid var(--secundario);
+  border-radius: 1rem;
+}
+
+.form--compra div {
+  /* display: flex;
+  flex-direction: column; */
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.form--input {
+  width: 25rem;
+  height: 3.5rem;
+  border-radius: 0.6rem;
+  padding: 1.5rem;
+  border: 0.2rem solid var(--secundarioOscuro);
+  outline: none;
+  padding-top: 2rem;
+  background-color: var(--blanco);
+}
+
+input:-webkit-autofill {
+  appearance: none; /* Eliminar apariencia específica del navegador */
+  background-color: var(--blanco) !important; /* Cambiar color de fondo */
+  color: var(--negro) !important; /* Cambiar color del texto */
+  border: 0.2rem solid var(--secundarioOscuro); /* Personaliza el borde */
+  box-shadow: 0 0 0px 1000px var(--blanco) inset !important; /* Eliminar sombreado interno del navegador */
+  -webkit-box-shadow: 0 0 0px 1000px var(--blanco) inset !important; /* Sombra interna para webkit */
+  transition: background-color 5000s ease-in-out 0s; /* Hack para mantener el color después del autofill */
+
+}
+
+.form--label {
+  position: absolute;
+  top: 50%;
+  left: 3.5rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s;
+  font-family: var(--fuentePrincipal);
+}
+
+.form--input:not(:placeholder-shown) ~ .form--label,
+.form--input:focus ~ label {
+  top: 0;
+  left: 3.5rem;
+  font-size: 1.3rem;
+  padding: 0 0.2rem;
+  background-color: var(--blanco);
 }

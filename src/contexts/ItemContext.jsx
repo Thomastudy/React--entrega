@@ -26,6 +26,7 @@ export const Provider = ({ children }) => {
 
   const removeItem = (id) => {
     const filter = items.filter((i) => i.id !== id);
+    console.log(filter);
     setItems(filter);
   };
 

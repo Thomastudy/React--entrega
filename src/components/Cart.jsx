@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { ItemContext } from "../contexts/ItemContext";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   phone: "",
@@ -11,11 +12,22 @@ const initialValues = {
 export const Cart = () => {
   const [buyer, setBuyer] = useState(initialValues);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const { items, removeItem, reset } = useContext(ItemContext);
 
   const total = items.reduce((acc, act) => acc + act.price * act.quantity, 0);
 
   const sendOrder = () => {
+    if (!buyer.name || !buyer.email || !buyer.phone) {
+      Swal.fire({
+        title: "Datos incompletos",
+        text: "Por favor, complete todos los campos del formulario.",
+        icon: "warning",
+        confirmButtonText: "Aceptar",
+      });
+      return;
+    }
     const order = {
       buyer,
       items,
@@ -28,7 +40,7 @@ export const Cart = () => {
     addDoc(orderColection, order)
       .then(({ id }) => {
         if (id) {
-          alert("Su orden: " + id + " ha sido completada");
+          finCompra(id);
         }
       })
       .finally(() => {
@@ -46,9 +58,22 @@ export const Cart = () => {
     });
   };
 
+  const navigate = useNavigate();
+
   if (items.length === 0) {
-    return "volver al menu principal";
+    navigate("/");
   }
+
+  const finCompra = (id) =>
+    Swal.fire({
+      title: "Compra finalizada!",
+      html: `Su orden ${id} ha sido enviada. Recibiras un Whatsapp de parte de Hali Accesorios con el cual nos contactaremos para formalizar el pago`,
+      confirmButtonText: `Menu principal`,
+    }).then(navigate("/"));
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
     <>
@@ -57,6 +82,7 @@ export const Cart = () => {
           Vaciar carrito
         </button>
         {items.map((product) => {
+          console.log(product);
           return (
             <div key={product.id} className="listado">
               <img
@@ -84,36 +110,58 @@ export const Cart = () => {
         <p>Total: ${total}</p>
       </div>
       <form action="" className="form--compra">
-        <div>
-          <label>Nombre:</label>
-          <input
-            value={buyer.name}
-            name="name"
-            type="text"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input
-            value={buyer.email}
-            name="email"
-            type="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label>Telefono:</label>
-          <input
-            value={buyer.phone}
-            name="phone"
-            type="tel"
-            onChange={handleChange}
-          />
-        </div>
-        <button type="button" className="button" onClick={sendOrder}>
+        <button type="button" className="button" onClick={toggleModal}>
           Comprar
         </button>
+
+        {isModalOpen && (
+          <div className="form--div">
+            <h2>Finalizar compra</h2>
+            <div>
+              <input
+                placeholder=""
+                className="form--input"
+                required
+                value={buyer.name}
+                name="name"
+                type="text"
+                onChange={handleChange}
+              />
+              <label className="form--label">Nombre:</label>
+            </div>
+            <div>
+              <input
+                placeholder=""
+                className="form--input"
+                required
+                value={buyer.email}
+                name="email"
+                type="email"
+                onChange={handleChange}
+              />
+              <label className="form--label">Email:</label>
+            </div>
+            <div>
+              <input
+                placeholder=""
+                className="form--input"
+                required
+                value={buyer.phone}
+                name="phone"
+                type="tel"
+                onChange={handleChange}
+              />
+              <label className="form--label">Telefono:</label>
+            </div>
+            <button
+              type="button"
+              className=" btnComprar button"
+              onClick={sendOrder}
+            >
+              Finalizar compra
+            </button>
+          </div>
+        )}
       </form>
     </>
   );

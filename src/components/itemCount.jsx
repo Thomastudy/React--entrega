@@ -16,6 +16,17 @@ export const ItemCount = ({ stock, onAdd }) => {
   const handleAdd = () => {
     onAdd(count);
     setCount(1);
+    agregadoCarrito();
+  };
+
+  const agregadoCarrito = () => {
+    Swal.fire({
+      position: "top-end",
+      // icon: "success",
+      title: "Agregado al carrtiro",
+      showConfirmButton: false,
+      timer: 800,
+    });
   };
 
   return (
@@ -24,7 +35,9 @@ export const ItemCount = ({ stock, onAdd }) => {
         <button onClick={handleDecrease}>-</button>
         <span>{count}</span>
         <button onClick={handleIncrease}>+</button> <br />
-        <button className="button--add" onClick={handleAdd}>Comprar</button>
+        <button className="button--add" onClick={handleAdd}>
+          Comprar
+        </button>
       </div>
     </>
   );

@@ -38,7 +38,15 @@ export const ItemDetailContainer = (props) => {
 
   const onAdd = (quantity) => addItem({ ...product, quantity });
 
-  if (loading) return "wait";
+  if (loading)
+    return (
+      <div id="loader">
+        <div id="box"></div>
+        <div id="shadow"></div>
+      </div>
+    );
+
+  
 
   return (
     <>
