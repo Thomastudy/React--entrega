@@ -15,7 +15,6 @@ function App() {
     <>
       <Provider>
         <BrowserRouter>
-        
           <Header />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />

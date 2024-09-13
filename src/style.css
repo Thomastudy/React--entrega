@@ -191,7 +191,7 @@ h3 {
   font-size: 2.5rem;
 }
 
-.navegacion__enlace--activo,
+.active,
 .navegacion__enlace:hover {
   color: var(--secundario);
 }

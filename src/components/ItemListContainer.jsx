@@ -35,14 +35,19 @@ export const ItemListContainer = (props) => {
 
     getDocs(refCollection)
       .then((snapshot) => {
-        setProducts(
-          snapshot.docs.map((doc) => {
-            return { id: doc.id, ...doc.data() };
-          })
+        const productData = snapshot.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() };
+        });
+
+        const sortedProducts = productData.sort((a, b) =>
+          a.category.localeCompare(b.category)
         );
+
+        setProducts(sortedProducts);
       })
       .finally(() => setLoading(false));
   }, [id]);
+
   // useEffect(() => {
   //   new Promise((res, rej) => setTimeout(res(data), 2000))
 
@@ -59,7 +64,13 @@ export const ItemListContainer = (props) => {
   //     .finally(() => setLoading(false));
   // }, [id]);
 
-  if (loading) return "wait";
+  if (loading)
+    return (
+      <div id="loader">
+        <div id="box"></div>
+        <div id="shadow"></div>
+      </div>
+    );
 
   return (
     <>
@@ -102,10 +113,8 @@ export const ItemListContainer = (props) => {
                   <b>${i.price}</b>
                 </p>
                 <Link to={`/item/${i.id}`}>
-                  <button
-                    class="button pointer"
-                    title="Pulsa para comprar"
-                  >Ver producto <i class="fa-regular fa-heart pointer"></i> 
+                  <button class="button pointer" title="Pulsa para comprar">
+                    Ver producto <i class="fa-regular fa-heart pointer"></i>
                   </button>
                 </Link>
               </div>
