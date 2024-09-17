@@ -12,9 +12,7 @@ export const Footer = () => {
             </a>
           </div>
           <div className="ubicaciones">
-            <p className="texto-ubicaciones">
-              Punta Carretas - Pocitos - Punta del Este
-            </p>
+            <p className="texto-ubicaciones">Montevideo - Punta del Este</p>
             <p className="texto-ubicaciones">Hacemos envios</p>
           </div>
         </div>

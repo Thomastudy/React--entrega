@@ -67,8 +67,12 @@ export const Cart = () => {
   const finCompra = (id) =>
     Swal.fire({
       title: "Compra finalizada!",
-      html: `Su orden ${id} ha sido enviada. Recibiras un Whatsapp de parte de Hali Accesorios con el cual nos contactaremos para formalizar el pago`,
+      html: `<p>Su orden <u>${id}</u> ha sido enviada. Recibiras un Whatsapp de parte de Hali Accesorios con el cual nos contactaremos para formalizar el pago</p>`,
       confirmButtonText: `Menu principal`,
+      customClass: {
+        confirmButton: "button",
+      },
+      buttonsStyling: false,
     }).then(navigate("/"));
 
   const toggleModal = () => {

@@ -36,7 +36,7 @@ p,
 .p {
   font-size: 2rem;
   font-family: var(--fuentePrincipal);
-  color: var(--blanco);
+  /* color: var(--blanco); */
 }
 
 a {

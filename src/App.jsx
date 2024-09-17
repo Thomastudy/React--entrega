@@ -9,13 +9,14 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer";
 
 import { Provider } from "./contexts/ItemContext";
 import { Cart } from "./components/Cart";
+import { AdminPage } from "./components/AdminPage";
 
 function App() {
   return (
     <>
       <Provider>
         <BrowserRouter>
-          <Header />
+          {location.pathname !== "/HaliAdmin" && <Header />}
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
 
@@ -25,10 +26,12 @@ function App() {
 
             <Route path="/item/:id" element={<ItemDetailContainer />} />
 
+            <Route path="/HaliAdmin" element={<AdminPage />} />
+
             <Route path="*" element={"404"} />
           </Routes>
 
-          <Footer />
+          {location.pathname !== "/HaliAdmin" && <Footer />}
         </BrowserRouter>
       </Provider>
     </>
