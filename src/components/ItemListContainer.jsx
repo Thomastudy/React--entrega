@@ -26,6 +26,7 @@ export const ItemListContainer = (props) => {
   useEffect(() => {
     const db = getFirestore();
 
+    setLoading(true);
     const refCollection = !id
       ? collection(db, "prodcuts")
       : query(
@@ -47,7 +48,6 @@ export const ItemListContainer = (props) => {
       })
       .finally(() => setLoading(false));
   }, [id]);
-
 
   if (loading)
     return (

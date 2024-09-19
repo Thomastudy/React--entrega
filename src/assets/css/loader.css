@@ -29,7 +29,7 @@
   animation: animate 0.5s linear infinite;
 
   /* position: absolute; */
-  border-radius: 3px;
+  border-radius: 10px;
   margin-bottom: 1rem;
   z-index: 1000;
 }

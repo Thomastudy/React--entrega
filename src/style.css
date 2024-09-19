@@ -487,23 +487,45 @@ h3 {
   font-size: 2.2rem;
 }
 .prod-detail--info button {
-  background-color: var(--principal);
   padding: 0.6rem;
   font-weight: 600;
-  border: 0;
-  margin: 1rem;
-  color: var(--blanco);
+  margin: 1rem auto 0 auto;
   border-radius: 0.5rem;
   font-size: 2rem;
   min-width: 3rem;
 }
-.button--add {
-  width: 10rem;
+.prod-detail--info button:not(.btn--disabled) {
+  border: 0;
+  color: var(--blanco);
+  background-color: var(--principal);
+}
+.btn--disabled {
+  border: 2px solid var(--principal);
+  color: var(--principal);
 }
 
 .item--count {
   max-width: 13rem;
   margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  text-align: center;
+}
+.btn--add {
+  width: 100%;
+  grid-area: 2 / 1 / 3 / 4;
+}
+
+.btn--decrease {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.item--count span {
+  grid-area: 1 / 2 / 2 / 3;
+  padding-top: 1rem;
+}
+.btn--increase {
+  grid-area: 1 / 3 / 2 / 4;
 }
 
 /* Checkout formulario */
@@ -561,7 +583,6 @@ input:-webkit-autofill {
   box-shadow: 0 0 0px 1000px var(--blanco) inset !important; /* Eliminar sombreado interno del navegador */
   -webkit-box-shadow: 0 0 0px 1000px var(--blanco) inset !important; /* Sombra interna para webkit */
   transition: background-color 5000s ease-in-out 0s; /* Hack para mantener el color después del autofill */
-
 }
 
 .form--label {

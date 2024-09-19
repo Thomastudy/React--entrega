@@ -32,10 +32,23 @@ export const ItemCount = ({ stock, onAdd }) => {
   return (
     <>
       <div className="item--count">
-        <button onClick={handleDecrease}>-</button>
+        {count > 1 ? (
+          <button className="btn--decrease" onClick={handleDecrease}>
+            -
+          </button>
+        ) : (
+          <button className="btn--disabled">-</button>
+        )}
         <span>{count}</span>
-        <button onClick={handleIncrease}>+</button> <br />
-        <button className="button--add" onClick={handleAdd}>
+        {count < stock ? (
+          <button className="btn--increase" onClick={handleIncrease}>
+            +
+          </button>
+        ) : (
+          <button className="btn--disabled">+</button>
+        )}
+        <br />
+        <button className="btn--add" onClick={handleAdd}>
           Comprar
         </button>
       </div>
