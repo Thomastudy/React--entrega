@@ -22,9 +22,13 @@ export const Cart = () => {
     if (!buyer.name || !buyer.email || !buyer.phone) {
       Swal.fire({
         title: "Datos incompletos",
-        text: "Por favor, complete todos los campos del formulario.",
+        html: "<p>Por favor, complete todos los campos del formulario.</p>",
         icon: "warning",
         confirmButtonText: "Aceptar",
+        customClass: {
+          confirmButton: "button",
+        },
+        buttonsStyling: false,
       });
       return;
     }
@@ -95,17 +99,19 @@ export const Cart = () => {
                 alt={`=> foto de  ${product.title}`}
                 height={200}
               />
-              <div className="checkout--listado--info">
-                <h3>{product.title}</h3>
-                <h3>${product.price}</h3>
-                <p>Cantidad: {product.quantity}</p>
+              <div className="checkout--info-btn">
+                <div className="checkout--listado--info">
+                  <h3>{product.title}</h3>
+                  <h3>${product.price}</h3>
+                  <p>Cantidad: {product.quantity}</p>
+                </div>
+                <button
+                  className="boton-eliminar"
+                  onClick={() => removeItem(product.id)}
+                >
+                  ⛔️
+                </button>
               </div>
-              <button
-                className="boton-eliminar"
-                onClick={() => removeItem(product.id)}
-              >
-                ⛔️
-              </button>
             </div>
           );
         })}

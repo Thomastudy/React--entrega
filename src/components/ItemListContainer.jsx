@@ -44,7 +44,11 @@ export const ItemListContainer = (props) => {
           a.category.localeCompare(b.category)
         );
 
-        setProducts(sortedProducts);
+
+        const listProducts = sortedProducts.filter((prod) => prod.stock >= 1 )
+
+        console.log(sortedProducts);
+        setProducts(listProducts);
       })
       .finally(() => setLoading(false));
   }, [id]);
@@ -81,25 +85,25 @@ export const ItemListContainer = (props) => {
           </Card>
         ))}
       </Container> */}
-      <main class="mainContenedor">
-        <div class="contenedor">
+      <main className="mainContenedor">
+        <div className="contenedor">
           {products.map((i) => (
-            <div class="producto">
-              <div class="div--producto__imagen">
+            <div className="producto">
+              <div className="div--producto__imagen">
                 <img
-                  class="producto__imagen"
+                  className="producto__imagen"
                   src={i.img}
                   alt="imagen ${i.title}"
                 />
               </div>
-              <div class="producto__informacion">
-                <p class="producto__nombre">{i.title}</p>
-                <p class="producto__precio-r">
+              <div className="producto__informacion">
+                <p className="producto__nombre">{i.title}</p>
+                <p className="producto__precio-r">
                   <b>${i.price}</b>
                 </p>
                 <Link to={`/item/${i.id}`}>
-                  <button class="button pointer" title="Pulsa para comprar">
-                    Ver producto <i class="fa-regular fa-heart pointer"></i>
+                  <button className="button pointer" title="Pulsa para comprar">
+                    Ver producto <i className="fa-regular fa-heart pointer"></i>
                   </button>
                 </Link>
               </div>

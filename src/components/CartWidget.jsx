@@ -9,6 +9,16 @@ export const CartWidget = () => {
 
   const quantity = items.reduce((acc, i) => acc + i.quantity, 0);
 
+  const carritoVacio = () => {
+    Swal.fire({
+      position: "top-end",
+      // icon: "success",
+      title: "El carrito se encuentra vacio",
+      showConfirmButton: false,
+      timer: 800,
+    });
+  };
+
   return (
     <>
       {quantity > 0 ? (
@@ -20,7 +30,12 @@ export const CartWidget = () => {
         </Link>
       ) : (
         <div className="imgCarro" id="imgCarro">
-          <img src={Cart} className="pointer carrito" alt="carrito" />
+          <img
+            src={Cart}
+            className="pointer carrito"
+            alt="carrito"
+            onClick={carritoVacio}
+          />
         </div>
       )}
     </>

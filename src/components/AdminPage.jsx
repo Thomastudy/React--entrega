@@ -14,8 +14,10 @@ const initialValues = {
 
 export const AdminPage = () => {
   const [newProduct, setNewProduct] = useState(initialValues);
+  const [loading, setLoading] = useState(false);
 
   const addProduct = async () => {
+    setLoading(true);
     if (
       !newProduct.title ||
       !newProduct.description ||
@@ -47,7 +49,8 @@ export const AdminPage = () => {
 
       console.log(fullNewProducts);
       addDoc(productsColection, fullNewProducts)
-        .then(alert("eureca"))
+        .then(() => setLoading(false))
+        .then(productoAgregado)
         .finally(() => {
           setNewProduct(initialValues);
         });
@@ -70,6 +73,24 @@ export const AdminPage = () => {
       img: file, // Almacena el archivo en el estado
     }));
   };
+
+  const productoAgregado = () => {
+    Swal.fire({
+      position: "top-end",
+      // icon: "success",
+      title: "Producto agregado correctamente",
+      showConfirmButton: false,
+      timer: 800,
+    });
+  };
+
+  if (loading)
+    return (
+      <div id="loader">
+        <div id="box"></div>
+        <div id="shadow"></div>
+      </div>
+    );
 
   return (
     <>
