@@ -1,8 +1,5 @@
 export const Footer = () => {
-
-  nav
-
-  return (
+return (
     <>
       <footer className="footer">
         <div className="grid-footer">
@@ -17,7 +14,6 @@ export const Footer = () => {
           <div className="ubicaciones">
             <p className="texto-ubicaciones">Montevideo - Punta del Este</p>
             <p className="texto-ubicaciones">Hacemos envios</p>
-            
           </div>
         </div>
       </footer>
