@@ -611,3 +611,9 @@ input:-webkit-autofill {
   padding: 0 0.2rem;
   background-color: var(--blanco);
 }
+
+/* // haliadmin */
+.haliadmin {
+  color: var(--principal);
+  cursor: initial;
+}
