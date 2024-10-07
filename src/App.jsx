@@ -16,7 +16,7 @@ function App() {
     <>
       <Provider>
         <BrowserRouter>
-          {location.pathname !== "/HaliAdmin" && <Header />}
+          {location.pathname !== "/haliadmin" && <Header />}
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
 
@@ -26,12 +26,12 @@ function App() {
 
             <Route path="/item/:id" element={<ItemDetailContainer />} />
 
-            <Route path="/HaliAdmin" element={<AdminPage />} />
+            <Route path="/haliadmin" element={<AdminPage />} />
 
             <Route path="*" element={"404"} />
           </Routes>
 
-          {location.pathname !== "/HaliAdmin" && <Footer />}
+          {location.pathname !== "/haliadmin" && <Footer />}
         </BrowserRouter>
       </Provider>
     </>

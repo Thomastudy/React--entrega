@@ -1,4 +1,4 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, doc, getFirestore } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 import { useState } from "react";
@@ -43,7 +43,7 @@ export const AdminPage = () => {
       const imgURL = await getDownloadURL(storageRef);
 
       const db = getFirestore();
-      const productsColection = collection(db, "prodcuts");
+      const productsColection = collection(db, "products");
 
       const fullNewProducts = { ...newProduct, img: imgURL };
 
@@ -96,6 +96,7 @@ export const AdminPage = () => {
     <>
       <form action="" className="form--compra">
         <h1>AGREGAR PRODUCTOS</h1>
+        <a href="/">Volver al inicio</a>
         <div className="form--div">
           <div>
             <input

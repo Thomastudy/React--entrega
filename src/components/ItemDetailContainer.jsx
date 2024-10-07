@@ -18,7 +18,7 @@ export const ItemDetailContainer = (props) => {
   useEffect(() => {
     const db = getFirestore();
 
-    const refDoc = doc(db, "prodcuts", id);
+    const refDoc = doc(db, "products", id);
 
     getDoc(refDoc)
       .then((snapshot) => {

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { ItemContext } from "../contexts/ItemContext";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { sendEmail } from "./SendMail";
 
 const initialValues = {
   phone: "",
@@ -44,6 +45,7 @@ export const Cart = () => {
     addDoc(orderColection, order)
       .then(({ id }) => {
         if (id) {
+          sendEmail(buyer, total, items);
           finCompra(id);
         }
       })
@@ -90,7 +92,6 @@ export const Cart = () => {
           Vaciar carrito
         </button>
         {items.map((product) => {
-          console.log(product);
           return (
             <div key={product.id} className="listado">
               <img

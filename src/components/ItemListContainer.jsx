@@ -28,9 +28,9 @@ export const ItemListContainer = (props) => {
 
     setLoading(true);
     const refCollection = !id
-      ? collection(db, "prodcuts")
+      ? collection(db, "products")
       : query(
-          collection(db, "prodcuts"),
+          collection(db, "products"),
           where("category", "==", id.toLowerCase())
         );
 
@@ -47,7 +47,6 @@ export const ItemListContainer = (props) => {
 
         const listProducts = sortedProducts.filter((prod) => prod.stock >= 1 )
 
-        console.log(sortedProducts);
         setProducts(listProducts);
       })
       .finally(() => setLoading(false));
@@ -88,7 +87,7 @@ export const ItemListContainer = (props) => {
       <main className="mainContenedor">
         <div className="contenedor">
           {products.map((i) => (
-            <div className="producto">
+            <div key={i.id} className="producto">
               <div className="div--producto__imagen">
                 <img
                   className="producto__imagen"
