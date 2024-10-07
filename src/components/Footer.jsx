@@ -1,4 +1,7 @@
 export const Footer = () => {
+
+  nav
+
   return (
     <>
       <footer className="footer">
@@ -14,9 +17,7 @@ export const Footer = () => {
           <div className="ubicaciones">
             <p className="texto-ubicaciones">Montevideo - Punta del Este</p>
             <p className="texto-ubicaciones">Hacemos envios</p>
-            <a className="haliadmin" href="/haliadmin">
-              .
-            </a>
+            
           </div>
         </div>
       </footer>
