@@ -46,8 +46,6 @@ export const ItemDetailContainer = (props) => {
       </div>
     );
 
-  
-
   return (
     <>
       <div className="prod-detail ">
@@ -61,7 +59,13 @@ export const ItemDetailContainer = (props) => {
         <div className="prod-detail--info">
           <h1>{product.title}</h1>
           <p>{product.description}</p>
-          <h2>${product.price}</h2>
+          <p>
+            <s>${product.price} </s>
+            <b> -20%</b>
+          </p>
+          <h2>
+            <b>${product.price * 0.8}</b>
+          </h2>
           <p>Stock: {product.stock}</p>
 
           <ItemCount stock={product.stock} onAdd={onAdd} />

@@ -17,7 +17,10 @@ export const Cart = () => {
 
   const { items, removeItem, reset } = useContext(ItemContext);
 
-  const total = items.reduce((acc, act) => acc + act.price * act.quantity, 0);
+  const total = items.reduce(
+    (acc, act) => acc + act.price * 0.8 * act.quantity,
+    0
+  );
 
   const sendOrder = () => {
     if (!buyer.name || !buyer.email || !buyer.phone) {
@@ -103,7 +106,10 @@ export const Cart = () => {
               <div className="checkout--info-btn">
                 <div className="checkout--listado--info">
                   <h3>{product.title}</h3>
-                  <h3>${product.price}</h3>
+                  <p>
+                    <s>${product.price}</s> -20% <br />
+                  </p>
+                    <h3>${product.price * 0.8}</h3>
                   <p>Cantidad: {product.quantity}</p>
                 </div>
                 <button

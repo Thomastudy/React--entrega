@@ -44,8 +44,7 @@ export const ItemListContainer = (props) => {
           a.category.localeCompare(b.category)
         );
 
-
-        const listProducts = sortedProducts.filter((prod) => prod.stock >= 1 )
+        const listProducts = sortedProducts.filter((prod) => prod.stock >= 1);
 
         setProducts(listProducts);
       })
@@ -98,7 +97,8 @@ export const ItemListContainer = (props) => {
               <div className="producto__informacion">
                 <p className="producto__nombre">{i.title}</p>
                 <p className="producto__precio-r">
-                  <b>${i.price}</b>
+                  <s>${i.price}</s> -20% <br />
+                  <b>${i.price * 0.8}</b>
                 </p>
                 <Link to={`/item/${i.id}`}>
                   <button className="button pointer" title="Pulsa para comprar">
