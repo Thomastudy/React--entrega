@@ -97,8 +97,7 @@ export const ItemListContainer = (props) => {
               <div className="producto__informacion">
                 <p className="producto__nombre">{i.title}</p>
                 <p className="producto__precio-r">
-                  <s>${i.price}</s> -20% <br />
-                  <b>${i.price * 0.8}</b>
+                  <b>${i.price}</b>
                 </p>
                 <Link to={`/item/${i.id}`}>
                   <button className="button pointer" title="Pulsa para comprar">

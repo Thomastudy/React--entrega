@@ -59,12 +59,9 @@ export const ItemDetailContainer = (props) => {
         <div className="prod-detail--info">
           <h1>{product.title}</h1>
           <p>{product.description}</p>
-          <p>
-            <s>${product.price} </s>
-            <b> -20%</b>
-          </p>
+
           <h2>
-            <b>${product.price * 0.8}</b>
+            <b>${product.price}</b>
           </h2>
           <p>Stock: {product.stock}</p>
 
