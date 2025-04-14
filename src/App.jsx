@@ -14,6 +14,7 @@ import { AdminPage } from "./components/AdminPage";
 function App() {
   return (
     <>
+    {/* testeando fecha */}
       <Provider>
         <BrowserRouter>
           {location.pathname !== "/haliadmin" && <Header />}
